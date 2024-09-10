@@ -1,16 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
 }
 
 android {
-    namespace = "com.example.daggerhillt"
+    namespace = "com.example.chatease_project"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.daggerhillt"
+        applicationId = "com.example.chatease_project"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -68,8 +66,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(libs.okhttp)
-    implementation (libs.gson)
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 }
