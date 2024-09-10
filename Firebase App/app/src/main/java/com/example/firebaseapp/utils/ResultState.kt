@@ -1,0 +1,9 @@
+package com.example.firebaseapp.utils
+
+import com.google.common.base.Throwables
+
+sealed class ResultState<out T> {
+    data class Success<out R>(val data: R): ResultState<R>()
+    data class Failure(val msg: Throwables): ResultState<Nothing>()
+    object Loading : ResultState<Nothing>()
+}
