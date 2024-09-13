@@ -1,5 +1,7 @@
 package com.example.firebaseapp.di
 
+import com.example.firebaseapp.firestore.repository.FirestoreDbRepositoryImpl
+import com.example.firebaseapp.firestore.repository.FirestoreRepository
 import com.example.firebaseapp.repository.RealtimeDbRepository
 import com.example.firebaseapp.repository.RealtimeRepository
 import dagger.Binds
@@ -14,4 +16,9 @@ abstract class RepositoryModule {
     abstract fun providesRealtimeRepository(
         repo: RealtimeDbRepository
     ): RealtimeRepository
+
+    @Binds
+    abstract fun provideFirestoreRepository(
+        repo: FirestoreDbRepositoryImpl
+    ): FirestoreRepository
 }
