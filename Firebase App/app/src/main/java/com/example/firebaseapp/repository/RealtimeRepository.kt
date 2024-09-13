@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface RealtimeRepository {
-    fun insert(item: RealtimeModelResponse.RealtimeItems): Flow<Result<String>>
+    fun insert(item: RealtimeModelResponse.RealtimeItems): Flow<ResultState<String>>
     fun getItems(): Flow<ResultState<List<RealtimeModelResponse>>>
     fun deleteItem(key: String): Flow<ResultState<String>>
     fun updateItem(res: RealtimeModelResponse): Flow<ResultState<String>>
