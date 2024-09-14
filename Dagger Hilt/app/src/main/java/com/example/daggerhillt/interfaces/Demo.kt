@@ -14,7 +14,7 @@ interface DemonOne{
 
 class DemoImplementationOne @Inject constructor(): DemonOne{
     override fun demoOne() {
-        Log.d("main","demoOne is calling ..")
+        Log.d("main", "demoOne is calling ..")
     }
 
 }

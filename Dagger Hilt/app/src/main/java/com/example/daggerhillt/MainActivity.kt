@@ -10,14 +10,13 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.daggerhillt.daggerhilt.demo.Car
 import com.example.daggerhillt.di.Computer
 import com.example.daggerhillt.interfaces.ImplementationOne
 import com.example.daggerhillt.interfaces.Main
 import com.example.daggerhillt.interfaces.MainOne
 import com.example.daggerhillt.interfaces.MainTwo
 import com.example.daggerhillt.manualdependecy.BaseApp
-import com.example.daggerhillt.qualifiers.FName
-import com.example.daggerhillt.qualifiers.Test
 import com.example.daggerhillt.ui.theme.DaggerHilltTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -31,8 +30,11 @@ class MainActivity : ComponentActivity() {
 //    lateinit var mainOne: MainOne
 //    @Inject
 //    lateinit var mainTwo: MainTwo
-    @Inject
-    lateinit var test: Test
+//    @Inject
+//    lateinit var test: Test
+
+    //Dagger hilt
+    @Inject lateinit var car: Car
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -43,7 +45,9 @@ class MainActivity : ComponentActivity() {
 //                    BaseApp().main.main()
 //                    mainOne.demoOne()
 //                    mainTwo.mainTwo()
-                    test.getName()
+//                    test.getName()
+
+                    car.getCar()
 
                     Greeting(
                         modifier = Modifier.padding(innerPadding)
@@ -52,10 +56,10 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-    companion object{
-        val FName = "Ankur"
-        val LName =  "Gupta"
-    }
+//    companion object{
+//        val FName = "Ankur"
+//        val LName =  "Gupta"
+//    }
 }
 
 @Composable
