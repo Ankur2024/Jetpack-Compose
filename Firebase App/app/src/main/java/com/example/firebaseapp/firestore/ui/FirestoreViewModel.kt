@@ -12,44 +12,60 @@ import com.example.firebaseapp.utils.ResultState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
 @HiltViewModel
 class FirestoreViewModel @Inject constructor(
-    private val repo: FirestoreRepository
-): ViewModel(){
-    private val _res: MutableState<FirestoreState> = mutableStateOf(FirestoreState())
-    val res: State<FirestoreState> = _res
+    private val repo:FirestoreRepository
+) : ViewModel(){
+
+    private val _res:MutableState<FirestoreState> = mutableStateOf(FirestoreState())
+    val res:State<FirestoreState> = _res
+
+    fun insert(item:FirestoreModelResponse.FirestoreItem) = repo.insert(item)
+
+    private val _updateData:MutableState<FirestoreModelResponse> = mutableStateOf(
+        FirestoreModelResponse(
+            item = FirestoreModelResponse.FirestoreItem()
+        )
+    )
+    val updateData:State<FirestoreModelResponse> = _updateData
+
+    fun setData(data:FirestoreModelResponse){
+        _updateData.value = data
+    }
+
     init {
         getItems()
     }
-    fun insert(item: FirestoreModelResponse.FirestoreItem) = repo.insert(item)
-    fun getItems()  = viewModelScope.launch {
+
+    fun getItems() = viewModelScope.launch {
         repo.getItems().collect{
             when(it){
-                is ResultState.Failure -> {
+                is ResultState.Success->{
+                    _res.value = FirestoreState(
+                        data = it.data
+                    )
+                }
+                is ResultState.Failure->{
                     _res.value = FirestoreState(
                         error = it.msg.toString()
                     )
                 }
-                ResultState.Loading -> {
+                ResultState.Loading->{
                     _res.value = FirestoreState(
                         isLoading = true
-                    )
-                }
-                is ResultState.Success -> {
-                    _res.value = FirestoreState(
-                        data = it.data
                     )
                 }
             }
         }
     }
-    fun delete(key: String) = repo.delete(key)
-    fun update(item: FirestoreModelResponse) = repo.update(item)
+
+    fun delete(key:String) = repo.delete(key)
+    fun update(item:FirestoreModelResponse) = repo.update(item)
+
 }
 
 data class FirestoreState(
-    val data: List<FirestoreModelResponse> = emptyList(),
-    val error: String = "",
-    val isLoading: Boolean = false,
-    )
+    val data:List<FirestoreModelResponse> = emptyList(),
+    val error:String = "",
+    val isLoading:Boolean = false
+)

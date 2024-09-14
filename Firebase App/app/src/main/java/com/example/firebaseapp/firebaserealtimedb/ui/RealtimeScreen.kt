@@ -1,6 +1,5 @@
-package com.example.firebaseapp.ui
+package com.example.firebaseapp.firebaserealtimedb.ui
 
-import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -279,3 +278,81 @@ fun EachRow(
         }
     }
 }
+
+
+//@Composable
+//fun Update(
+//    isUpdate:MutableState<Boolean>,
+//    itemState: RealtimeModelResponse,
+//    viewModel: RealtimeViewModel
+//) {
+//    val title = remember { mutableStateOf(itemState.item?.title) }
+//    val des = remember { mutableStateOf(itemState.item?.description) }
+//    val scope = rememberCoroutineScope()
+//    val context = LocalContext.current
+//
+//    if(isUpdate.value){
+//
+//        AlertDialog(onDismissRequest = { isUpdate.value = false },
+//            text = {
+//                Column(
+//                    modifier = Modifier
+//                        .fillMaxWidth()
+//                        .padding(10.dp),
+//                    horizontalAlignment = Alignment.CenterHorizontally
+//                ) {
+//                    TextField(value = title.value!!, onValueChange = {
+//                        title.value = it
+//                    },
+//                        placeholder = { Text(text = "Title") }
+//                    )
+//                    Spacer(modifier = Modifier.height(10.dp))
+//                    TextField(value = des.value!!, onValueChange = {
+//                        des.value = it
+//                    },
+//                        placeholder = { Text(text = "description") }
+//                    )
+//                }
+//            },
+//            buttons = {
+//                Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Center) {
+//                    Button(onClick = {
+//                        scope.launch(Dispatchers.Main) {
+//                            viewModel.update(
+//                                RealtimeModelResponse(
+//                                    item = RealtimeModelResponse.RealtimeItems(
+//                                        title.value,
+//                                        des.value
+//                                    ),
+//                                    key = itemState.key
+//                                )
+//                            ).collect {
+//                                when (it) {
+//                                    is ResultState.Success -> {
+//                                        context.showMsg(
+//                                            msg = it.data
+//                                        )
+//                                        isUpdate.value = false
+//
+//                                    }
+//                                    is ResultState.Failure -> {
+//                                        context.showMsg(
+//                                            msg = it.msg.toString()
+//                                        )
+//                                    }
+//                                    ResultState.Loading -> {
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }) {
+//                        Text(text = "Save")
+//                    }
+//                }
+//            }
+//        )
+//
+//    }
+//
+//}
+

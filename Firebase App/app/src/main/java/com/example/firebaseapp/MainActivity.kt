@@ -13,7 +13,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import com.example.firebaseapp.ui.RealtimeScreen
+import com.example.firebaseapp.firebaserealtimedb.ui.RealtimeScreen
 import com.example.firebaseapp.ui.theme.FirebaseAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
