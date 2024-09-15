@@ -1,4 +1,4 @@
-package com.example.firebaseapp.firestore.ui
+package com.example.firebaseapp.feature.firestore.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,7 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.example.firebaseapp.firestore.FirestoreModelResponse
+import com.example.firebaseapp.feature.firestore.FirestoreModelResponse
 import com.example.firebaseapp.utils.ResultState
 import com.example.firebaseapp.utils.showMsg
 import kotlinx.coroutines.Dispatchers

@@ -1,4 +1,4 @@
-package com.example.firebaseapp.firestore
+package com.example.firebaseapp.feature.firestore
 
 data class FirestoreModelResponse(
     val item: FirestoreItem?,

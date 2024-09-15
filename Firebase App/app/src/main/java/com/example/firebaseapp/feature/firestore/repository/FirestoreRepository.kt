@@ -1,6 +1,6 @@
-package com.example.firebaseapp.firestore.repository
+package com.example.firebaseapp.feature.firestore.repository
 
-import com.example.firebaseapp.firestore.FirestoreModelResponse
+import com.example.firebaseapp.feature.firestore.FirestoreModelResponse
 import com.example.firebaseapp.utils.ResultState
 import kotlinx.coroutines.flow.Flow
 

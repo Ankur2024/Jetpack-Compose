@@ -1,6 +1,6 @@
-package com.example.firebaseapp.repository
+package com.example.firebaseapp.feature.firebaserealtimedb.repository
 
-import com.example.firebaseapp.firebaserealtimedb.RealtimeModelResponse
+import com.example.firebaseapp.feature.firebaserealtimedb.RealtimeModelResponse
 import com.example.firebaseapp.utils.ResultState
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

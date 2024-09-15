@@ -1,12 +1,12 @@
-package com.example.firebaseapp.firebaserealtimedb.ui
+package com.example.firebaseapp.feature.firebaserealtimedb.ui
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.firebaseapp.firebaserealtimedb.RealtimeModelResponse
-import com.example.firebaseapp.repository.RealtimeRepository
+import com.example.firebaseapp.feature.firebaserealtimedb.RealtimeModelResponse
+import com.example.firebaseapp.feature.firebaserealtimedb.repository.RealtimeRepository
 import com.example.firebaseapp.utils.ResultState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

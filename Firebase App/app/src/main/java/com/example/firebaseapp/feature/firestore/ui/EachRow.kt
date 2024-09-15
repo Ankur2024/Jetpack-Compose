@@ -1,4 +1,4 @@
-package com.example.firebaseapp.firestore.ui
+package com.example.firebaseapp.feature.firestore.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -25,7 +25,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.firebaseapp.firestore.FirestoreModelResponse
+import com.example.firebaseapp.feature.firestore.FirestoreModelResponse
 
 @Composable
 fun EachRow(

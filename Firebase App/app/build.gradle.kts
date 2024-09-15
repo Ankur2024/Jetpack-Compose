@@ -75,6 +75,8 @@ dependencies {
     implementation("com.google.firebase:firebase-database")
     //firestore
     implementation("com.google.firebase:firebase-firestore")
+    //firebase auth
+    implementation("com.google.firebase:firebase-auth")
 
     //Coroutine
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")

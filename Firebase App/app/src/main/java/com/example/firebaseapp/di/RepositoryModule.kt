@@ -1,9 +1,12 @@
 package com.example.firebaseapp.di
 
-import com.example.firebaseapp.firestore.repository.FirestoreDbRepositoryImpl
-import com.example.firebaseapp.firestore.repository.FirestoreRepository
-import com.example.firebaseapp.repository.RealtimeDbRepository
-import com.example.firebaseapp.repository.RealtimeRepository
+import com.example.firebaseapp.feature.firebase_auth.repository.AuthRepository
+import com.example.firebaseapp.feature.firebase_auth.repository.AuthRepositoryImpl
+import com.example.firebaseapp.feature.firestore.repository.FirestoreDbRepositoryImpl
+import com.example.firebaseapp.feature.firestore.repository.FirestoreRepository
+import com.example.firebaseapp.feature.firebaserealtimedb.repository.RealtimeDbRepository
+import com.example.firebaseapp.feature.firebaserealtimedb.repository.RealtimeRepository
+import com.google.firebase.auth.FirebaseAuth
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -21,4 +24,9 @@ abstract class RepositoryModule {
     abstract fun provideFirestoreRepository(
         repo: FirestoreDbRepositoryImpl
     ): FirestoreRepository
+
+    @Binds
+    abstract fun provideFirebaseAuthRepository(
+        repo: AuthRepositoryImpl
+    ): AuthRepository
 }

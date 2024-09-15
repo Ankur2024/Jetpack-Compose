@@ -1,4 +1,4 @@
-package com.example.firebaseapp.firebaserealtimedb.ui
+package com.example.firebaseapp.feature.firebaserealtimedb.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -38,7 +38,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.firebaseapp.firebaserealtimedb.RealtimeModelResponse
+import com.example.firebaseapp.feature.firebaserealtimedb.RealtimeModelResponse
 import com.example.firebaseapp.utils.ResultState
 import com.example.firebaseapp.utils.showMsg
 import kotlinx.coroutines.Dispatchers

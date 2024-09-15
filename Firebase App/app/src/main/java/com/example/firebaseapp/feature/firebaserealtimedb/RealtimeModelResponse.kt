@@ -1,4 +1,4 @@
-package com.example.firebaseapp.firebaserealtimedb
+package com.example.firebaseapp.feature.firebaserealtimedb
 
 data class RealtimeModelResponse(
     val item: RealtimeItems?,

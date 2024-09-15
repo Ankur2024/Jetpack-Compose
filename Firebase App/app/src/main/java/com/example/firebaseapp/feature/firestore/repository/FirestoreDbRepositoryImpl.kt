@@ -1,6 +1,6 @@
-package com.example.firebaseapp.firestore.repository
+package com.example.firebaseapp.feature.firestore.repository
 
-import com.example.firebaseapp.firestore.FirestoreModelResponse
+import com.example.firebaseapp.feature.firestore.FirestoreModelResponse
 import com.example.firebaseapp.utils.ResultState
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.channels.awaitClose
@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class FirestoreDbRepositoryImpl @Inject constructor(
     private val db: FirebaseFirestore
-): FirestoreRepository{
+): FirestoreRepository {
     override fun insert(item: FirestoreModelResponse.FirestoreItem): Flow<ResultState<String>> = callbackFlow {
         trySend(ResultState.Loading)
         db.collection("user")

@@ -1,4 +1,4 @@
-package com.example.firebaseapp.firestore.ui
+package com.example.firebaseapp.feature.firestore.ui
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
@@ -6,21 +6,21 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.firebaseapp.firestore.FirestoreModelResponse
-import com.example.firebaseapp.firestore.repository.FirestoreRepository
+import com.example.firebaseapp.feature.firestore.FirestoreModelResponse
+import com.example.firebaseapp.feature.firestore.repository.FirestoreRepository
 import com.example.firebaseapp.utils.ResultState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
 class FirestoreViewModel @Inject constructor(
-    private val repo:FirestoreRepository
+    private val repo: FirestoreRepository
 ) : ViewModel(){
 
     private val _res:MutableState<FirestoreState> = mutableStateOf(FirestoreState())
     val res:State<FirestoreState> = _res
 
-    fun insert(item:FirestoreModelResponse.FirestoreItem) = repo.insert(item)
+    fun insert(item: FirestoreModelResponse.FirestoreItem) = repo.insert(item)
 
     private val _updateData:MutableState<FirestoreModelResponse> = mutableStateOf(
         FirestoreModelResponse(
@@ -29,7 +29,7 @@ class FirestoreViewModel @Inject constructor(
     )
     val updateData:State<FirestoreModelResponse> = _updateData
 
-    fun setData(data:FirestoreModelResponse){
+    fun setData(data: FirestoreModelResponse){
         _updateData.value = data
     }
 
@@ -60,7 +60,7 @@ class FirestoreViewModel @Inject constructor(
     }
 
     fun delete(key:String) = repo.delete(key)
-    fun update(item:FirestoreModelResponse) = repo.update(item)
+    fun update(item: FirestoreModelResponse) = repo.update(item)
 
 }
 

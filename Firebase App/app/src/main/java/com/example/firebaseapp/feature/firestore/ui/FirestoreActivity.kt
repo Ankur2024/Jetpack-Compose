@@ -1,4 +1,4 @@
-package com.example.firebaseapp.firestore.ui
+package com.example.firebaseapp.feature.firestore.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
