@@ -11,12 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.daggerhillt.daggerhilt.demo.Car
-import com.example.daggerhillt.di.Computer
-import com.example.daggerhillt.interfaces.ImplementationOne
-import com.example.daggerhillt.interfaces.Main
-import com.example.daggerhillt.interfaces.MainOne
-import com.example.daggerhillt.interfaces.MainTwo
-import com.example.daggerhillt.manualdependecy.BaseApp
+import com.example.daggerhillt.daggerhilt.demo.Main
 import com.example.daggerhillt.ui.theme.DaggerHilltTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -35,6 +30,7 @@ class MainActivity : ComponentActivity() {
 
     //Dagger hilt
     @Inject lateinit var car: Car
+    @Inject lateinit var main: Main
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -48,7 +44,7 @@ class MainActivity : ComponentActivity() {
 //                    test.getName()
 
                     car.getCar()
-
+                    main.getName()
                     Greeting(
                         modifier = Modifier.padding(innerPadding)
                     )
